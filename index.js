@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var Request = require("request");
 var path = require('path');
-var expressValidator = require('express-validator');
+//var {check,validationResult} = require('express-validator');
 var flash = require('express-flash');
 var session = require('express-session');
 var createError = require('http-errors');
@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 
 /** parse application/x-www-form-urlencoded **/
-app.use(bodyParser.urlencoded({ extended: true, limit:'500mb' }))
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 //app.use(expressValidator());
@@ -41,10 +41,7 @@ app.use(session({
 
 /** customer html form reder **/
 app.get('/',function(req,res){
-    res.render('index',{
-        topicHead : 'Customer Info',
-    });
-    console.log('Customer Info');
+    res.render('index',{Name:"",Title:"",Corporation:"",AddressFirst:"",AddressSecond:"",City:"",State:"",Zip:"",OfficeTele:"",CellTele:"",Email:"",Url:"",CustomerType:"",});
 });
 
 /** set root customer **/

@@ -44,13 +44,18 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Name</label>
-                                    <input class="input--style-4" type="text" name="Name" placeholder="Full Name">
+                                    
+                                    <% if (Name) { %>
+                                        <input class="input--style-4" type="text" name="Name" placeholder="Full Name" autocomplete="off" value="<%- Name %>">
+                                    <% } else { %>
+                                       <input class="input--style-4" type="text" name="Name" placeholder="Full Name" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Title</label>
-                                    <input class="input--style-4" type="text" name="Title" placeholder="Title">
+                                    <input class="input--style-4" type="text" name="Title" placeholder="Title" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -59,13 +64,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Corporation</label>
-                                    <input class="input--style-4" type="text" name="Corporation" placeholder="Corporation">
+                                    <input class="input--style-4" type="text" name="Corporation" placeholder="Corporation" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Address 1</label>
-                                    <input class="input--style-4" type="text" name="AddressFirst" placeholder="Address">
+                                    <input class="input--style-4" type="text" name="AddressFirst" placeholder="Address" autocomplete="off">
                                 </div>
                             </div>
                         </div>
