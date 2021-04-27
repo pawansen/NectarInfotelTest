@@ -1,5 +1,4 @@
 var express = require('express');
-var router = express.Router();
 var bodyParser = require('body-parser');
 var Request = require("request");
 var path = require('path');
@@ -9,17 +8,20 @@ var session = require('express-session');
 var createError = require('http-errors');
 var mysql = require('mysql');
 var connectionDB  = require('./config/database');
+var customerRouter = require('./routes/customer');
 var app = express();
-
+/** check port **/
+const port = process.env.PORT || 3000;
+var http = require('http').createServer(app);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-/* check port*/
-const port = process.env.PORT || 3000;
-
+/** parse application/json **/
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+/** parse application/x-www-form-urlencoded **/
+app.use(bodyParser.urlencoded({ extended: true, limit:'500mb' }))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 //app.use(expressValidator());
@@ -31,29 +33,24 @@ app.use(function(request, response, next) {
 });
 
 app.use(session({ 
-    secret: '123456cat',
+    secret: 'NectarTech007',
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 60000 }
 }))
 
-/*parse application/x-www-form-urlencoded*/
-app.use(bodyParser.urlencoded({ extended: true, limit:'500mb' }))
-
-/*parse application/json*/
-app.use(bodyParser.json());
-
-var http = require('http').createServer(app);
-
-
+/** customer html form reder **/
 app.get('/',function(req,res){
     res.render('index',{
-        topicHead : 'Student Form',
+        topicHead : 'Customer Info',
     });
-    console.log('user accessing Home page');
+    console.log('Customer Info');
 });
 
+/** set root customer **/
+app.use('/customer', customerRouter);
 
+/** server listen **/
 var server = http.listen(port, function () {
     console.log('server is running ' + port);
 });

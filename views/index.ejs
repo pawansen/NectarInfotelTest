@@ -27,12 +27,19 @@
 </head>
 
 <body>
+
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Grounding / Bonding Evaluation Tool (GBET) Customer Primary Contact Information</h2>
-                    <form method="POST">
+                    <% if (messages.error) { %>
+                    <p style="color:red"><%- messages.error %></p>
+                    <% } %>
+                    <% if (messages.success) { %>
+                    <p style="color:green"><%- messages.success %></p>
+                    <% } %>
+                    <form method="POST" action="/customer/customer_info" name="customerinfo">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
