@@ -1,0 +1,12 @@
+.elasticbeanstalk/
+application/logs/*
+api/application/cache/*
+api/application/logs/*
+admin/application/logs/*
+!api/uploads/profile/picture/default.jpg
+!api/uploads/sports.txt
+api/uploads/*
+.htaccess
+/nbproject/private/
+/node_modules
+/nbproject/*
