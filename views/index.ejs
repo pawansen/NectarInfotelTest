@@ -55,7 +55,12 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Title</label>
-                                    <input class="input--style-4" type="text" name="Title" placeholder="Title" autocomplete="off">
+                          
+                                   <% if (Title) { %>
+                                        <input class="input--style-4" type="text" name="Title" placeholder="Title" autocomplete="off" value="<%- Title %>">
+                                    <% } else { %>
+                                        <input class="input--style-4" type="text" name="Title" placeholder="Title" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
@@ -64,13 +69,22 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Corporation</label>
+                  
+                                <% if (Corporation) { %>
+                                    <input class="input--style-4" type="text" name="Corporation" placeholder="Corporation" autocomplete="off" value="<%- Corporation %>">
+                                    <% } else { %>
                                     <input class="input--style-4" type="text" name="Corporation" placeholder="Corporation" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Address 1</label>
-                                    <input class="input--style-4" type="text" name="AddressFirst" placeholder="Address" autocomplete="off">
+                                   <% if (AddressFirst) { %>
+                                    <input class="input--style-4" type="text" name="AddressFirst" placeholder="Address 1" autocomplete="off" value="<%- AddressFirst %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="AddressFirst" placeholder="Address 1" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
@@ -79,25 +93,41 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Address 2</label>
-                                    <input class="input--style-4" type="text" name="AddressSecond">
+                                    <% if (AddressSecond) { %>
+                                    <input class="input--style-4" type="text" name="AddressSecond" placeholder="Address 2" autocomplete="off" value="<%- AddressSecond %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="AddressSecond" placeholder="Address 2" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">City</label>
-                                    <input class="input--style-4" type="text" name="City" placeholder="City">
+                                    <% if (City) { %>
+                                    <input class="input--style-4" type="text" name="City" placeholder="City" autocomplete="off" value="<%- City %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="City" placeholder="City" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">State</label>
-                                    <input class="input--style-4" type="text" name="State" placeholder="State">
+                                    <% if (State) { %>
+                                    <input class="input--style-4" type="text" name="State" placeholder="State" autocomplete="off" value="<%- State %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="State" placeholder="State" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">ZIP</label>
-                                    <input class="input--style-4" type="text" name="Zip" placeholder="456003">
+                                    <% if (Zip) { %>
+                                    <input class="input--style-4" type="text" name="Zip" placeholder="456003" autocomplete="off" value="<%- Zip %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="Zip" placeholder="456003" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
@@ -106,25 +136,42 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Office Tele</label>
-                                    <input class="input--style-4" type="text" name="OfficeTele" placeholder="Office Tele">
+                                    <% if (OfficeTele) { %>
+                                    <input class="input--style-4" type="text" name="OfficeTele" placeholder="" autocomplete="off" value="<%- OfficeTele %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="OfficeTele" placeholder="" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Cell Tele</label>
-                                    <input class="input--style-4" type="text" name="CellTele" placeholder="Cell Tele">
+
+                                    <% if (CellTele) { %>
+                                    <input class="input--style-4" type="text" name="CellTele" placeholder="" autocomplete="off" value="<%- CellTele %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="CellTele" placeholder="" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="text" name="Email" placeholder="example@mail.com">
+                                    <% if (Email) { %>
+                                    <input class="input--style-4" type="text" name="Email" placeholder="example@mail.com" autocomplete="off" value="<%- Email %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="Email" placeholder="example@mail.com" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">URL</label>
-                                    <input class="input--style-4" type="text" name="Url" placeholder="https://www.example.com">
+                                    <% if (Url) { %>
+                                    <input class="input--style-4" type="text" name="Url" placeholder="https://www.example.com" autocomplete="off" value="<%- Url %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="Url" placeholder="https://www.example.com" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
@@ -134,12 +181,16 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Customer Type</label>
-                                    <input class="input--style-4" type="text" name="CustomerType">
+                                    <% if (CustomerType) { %>
+                                    <input class="input--style-4" type="text" name="CustomerType" autocomplete="off" value="<%- CustomerType %>">
+                                    <% } else { %>
+                                    <input class="input--style-4" type="text" name="CustomerType" autocomplete="off">
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Reset</button>
+                    <!--         <button action="/index" class="btn btn--radius-2 btn--blue" type="button">Reset</button> -->
                             <button class="btn btn--radius-2 btn--green" type="submit">Submit</button>
                         </div>
                     </form>

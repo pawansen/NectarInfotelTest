@@ -18,7 +18,7 @@ router.post('/customer_info',  [
     check('AddressSecond', 'Address 2 field is required').not().isEmpty(),
     check('City', 'City field is required').not().isEmpty(),
     check('State', 'State field is required').not().isEmpty(),
-    check('Zip', 'Zip field is required').not().isEmpty().isLength({ min: 6 }).withMessage('Zip must be 6 characters'),
+    check('Zip', 'Zip field is required').not().isEmpty().isNumeric().withMessage('Zip field should be numeric only').isLength({ min: 6,max:6 }).withMessage('Zip must be 6 characters'),
     check('OfficeTele', 'OfficeTele field is required').not().isEmpty().isNumeric(),
     check('CellTele', 'CellTele field is required').not().isEmpty().isNumeric().isLength({ min: 10 }).withMessage('CellTele must be 10 characters'),
     check('Email', 'Email field is required').not().isEmpty().isEmail(),
